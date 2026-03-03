@@ -8,7 +8,7 @@ import { NavLink } from "react-router";
 
 
 // Navbar with wishlist and watched drawers, PDF download, and user profile dropdown
-const Navbar = ({ wishlist, removeMovie, watched, removeWatched }) => {
+const Navbar = ({ wishlist = [], removeMovie = () => {}, watched = [], removeWatched = () => {} }) => {
     const navLinks = [
         <NavLink to="../Home">Home</NavLink>,
         <NavLink to="../LogIn">Login</NavLink>,

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import Root from "../layouts/Root";
-import Home from "../App";
+import App from "../App";
 import Dashboard from "../Pages/Dashboard";
 import NotFound from "../Pages/NotFound";
 import SignUp from "../Pages/SignUp";
@@ -13,13 +13,13 @@ import Unauthorized from "../Pages/Unauthorized.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App />,
+    errorElement: <NotFound />,
+  },
+  {
     element: <Root />,
     errorElement: <NotFound />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
       {
         path: "signup",
         element: <SignUp />,
