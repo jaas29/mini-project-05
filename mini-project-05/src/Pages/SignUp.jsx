@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Form from "./LogIn.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 const SignUp = () => {
     return (
+        <>
+        <Navbar />
         <StyledWrapper>
             <form className="form">
                 <div className="title">Welcome,<br /><span>sign up to continue</span></div>
@@ -22,6 +26,8 @@ const SignUp = () => {
                 <button className="button-confirm">Let`s go →</button>
             </form>
         </StyledWrapper>
+            <Footer />
+        </>
     );
 }
 

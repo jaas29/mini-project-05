@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 const Login = () => {
     return (
+        <>
+        <Navbar />
         <StyledWrapper>
             <form className="form">
                 <div className="title">Welcome,<br /><span>Login to continue</span></div>
@@ -20,16 +24,13 @@ const Login = () => {
                 <button className="button-confirm">Let`s go →</button>
             </form>
         </StyledWrapper>
+            <Footer />
+        </>
     );
 }
 
 const StyledWrapper = styled.div`
   .form {
-    --input-focus: #2d8cf0;
-    --font-color: #323232;
-    --font-color-sub: #666;
-    --bg-color: beige;
-    --main-color: black;
       ---darkblue:#0B2533;
       ---deepnavy:#031926;
       ---mediumteal:#468189;
