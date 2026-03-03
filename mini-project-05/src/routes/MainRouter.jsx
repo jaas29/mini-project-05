@@ -1,9 +1,12 @@
 import { createBrowserRouter } from "react-router";
 import Root from "../layouts/Root";
-import Home from "../pages/App";
-import Signup from "../pages/SignUp";
-import Login from "../pages/LogIn";
-import Dashboard from "../pages/Dashboard";
+import Home from "../App";
+import Dashboard from "../Pages/Dashboard";
+import NotFound from "../Pages/NotFound";
+import SignUp from "../Pages/SignUp";
+import LogIn from "../Pages/LogIn";
+import PrivateRoute from "../routes/PrivateRoute.jsx";
+import Unauthorized from "../Pages/Unauthorized.jsx";
 
 
 
@@ -19,11 +22,11 @@ const router = createBrowserRouter([
       },
       {
         path: "signup",
-        element: <Signup />,
+        element: <SignUp />,
       },
       {
         path: "login",
-        element: <Login />,
+        element: <LogIn />,
       },
       {
         path: "dashboard",

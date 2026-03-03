@@ -4,9 +4,18 @@ import { IoIosClose } from "react-icons/io";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import DownloadList from "./DownloadList";
 import { RiMovie2AiLine } from "react-icons/ri";
+import { NavLink } from "react-router";
+
 
 // Navbar with wishlist and watched drawers, PDF download, and user profile dropdown
 const Navbar = ({ wishlist, removeMovie, watched, removeWatched }) => {
+    const navLinks = [
+        <NavLink to="../Home">Home</NavLink>,
+        <NavLink to="../LogIn">Login</NavLink>,
+        <NavLink to="../SignUp">SignUp</NavLink>,
+
+    ];
+
 
     return (
         <>
@@ -42,14 +51,11 @@ const Navbar = ({ wishlist, removeMovie, watched, removeWatched }) => {
               </div>
               <ul
                 tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow bg-[#031926]">
-                <li>
-                  <a className="justify-between">
-                    Profile
-                  </a>
-                </li>
-                <li><a>Logout</a></li>
-              </ul>
+                className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-[#031926]">
+                      {navLinks.map((nv, index) => (
+                          <li key={index}>{nv}</li>
+                      ))}
+                  </ul>
             </div>
         </div>
                 </div>
