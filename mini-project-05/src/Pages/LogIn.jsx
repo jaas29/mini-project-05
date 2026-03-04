@@ -30,105 +30,109 @@ const Login = () => {
 }
 
 const StyledWrapper = styled.div`
-  .form {
-      ---darkblue:#0B2533;
-      ---deepnavy:#031926;
-      ---mediumteal:#468189;
-      ---softteal:#77ACA2;
-      ---mutedaqua:#9DBEBB;
-      ---warmsand:#F4E9CD;
-    padding: 20px;
-    background: lightblue;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 5px;
-    border: 2px solid var(---warmsand);
-    box-shadow: 4px 4px var(---warmsand);
-  }
+    .form {
+        --input-focus: #2d8cf0;
+        --font-color: #323232;
+        --font-color-sub: #666;
+        --bg-color: beige;
+        --main-color: black;
+        ---darkblue:#0B2533;
+        ---deepnavy:#031926;
+        ---mediumteal:#468189;
+        ---softteal:#77ACA2;
+        ---mutedaqua:#9DBEBB;
+        ---warmsand:#F4E9CD;
+        padding: 20px;
+        background: var(---deepnavy);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 5px;
+        border: 2px solid var(---warmsand);
+        box-shadow: 4px 4px var(---warmsand);
+    }
 
-  .title {
-    color: var(---deepnavy);
-    font-weight: 900;
-    font-size: 20px;
-    margin-bottom: 25px;
-  }
+    .title {
+        color: var(---deepnavy);
+        font-weight: 900;
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
 
-  .title span {
-    color: var(---softteal);
-    font-weight: 600;
-    font-size: 17px;
-  }
+    .title span {
+        color: var(---softteal);
+        font-weight: 600;
+        font-size: 17px;
+    }
 
-  .input {
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(---warmsand);
-    background-color: var(---softteal);
-    box-shadow: 4px 4px var(---warmsand);
-    font-size: 15px;
-    font-weight: 600;
-    color: var(---deepnavy);
-    padding: 5px 10px;
-    outline: none;
-  }
+    .input {
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid var(---warmsand);
+        background-color: var(---softteal);
+        box-shadow: 4px 4px var(---warmsand);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(---deepnavy);
+        padding: 5px 10px;
+        outline: none;
+    }
 
-  .input::placeholder {
-    color: var(---darkblue);
-    opacity: 0.8;
-  }
+    .input::placeholder {
+        color: var(---darkblue);
+        opacity: 0.8;
+    }
 
-  .input:focus {
-    border: 2px solid var(---mutedaqua);
-  }
+    .input:focus {
+        border: 2px solid var(---mutedaqua);
+    }
 
-  .login-with {
-    display: flex;
-    gap: 20px;
-  }
+    .login-with {
+        display: flex;
+        gap: 20px;
+    }
 
-  .button-log {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    border: 2px solid var(---warmsand);
-    background-color: var(---deepnavy);
-    box-shadow: 4px 4px var(---warmsand);
-    color: var(---deepnavy);
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .button-log {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 2px solid var(---warmsand);
+        background-color: var(---deepnavy);
+        box-shadow: 4px 4px var(---warmsand);
+        color: var(---warmsand);
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .icon {
-    width: 24px;
-    height: 24px;
-    fill: var(---warmsand);
-  }
+    .icon {
+        width: 24px;
+        height: 24px;
+        fill: var(---warmsand);
+    }
 
-  .button-log:active, .button-confirm:active {
-    box-shadow: 0px 0px var(---warmsand);
-    transform: translate(3px, 3px);
-  }
+    .button-log:active, .button-confirm:active {
+        box-shadow: 0px 0px var(---warmsand);
+        transform: translate(3px, 3px);
+    }
 
-  .button-confirm {
-    margin: 50px auto 0 auto;
-    width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(---warmsand);
-    background-color: var(---deepnavy);
-    box-shadow: 4px 4px var(---warmsand);
-    font-size: 17px;
-    font-weight: 600;
-    color: var(---deepnavy);
-    cursor: pointer;
-  }`;
-
+    .button-confirm {
+        margin: 50px auto 0 auto;
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid var(---warmsand);
+        background-color: var(---deepnavy);
+        box-shadow: 4px 4px var(---warmsand);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(---warmsand);
+        cursor: pointer;
+    }`;
 export default Login;
 

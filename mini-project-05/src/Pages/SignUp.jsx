@@ -45,7 +45,7 @@ const StyledWrapper = styled.div`
         ---mutedaqua:#9DBEBB;
         ---warmsand:#F4E9CD;
         padding: 20px;
-        background: lightblue;
+        background: var(---deepnavy);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -105,7 +105,7 @@ const StyledWrapper = styled.div`
         border: 2px solid var(---warmsand);
         background-color: var(---deepnavy);
         box-shadow: 4px 4px var(---warmsand);
-        color: var(---deepnavy);
+        color: var(---warmsand);
         font-size: 25px;
         display: flex;
         justify-content: center;
@@ -133,7 +133,7 @@ const StyledWrapper = styled.div`
         box-shadow: 4px 4px var(---warmsand);
         font-size: 17px;
         font-weight: 600;
-        color: var(---deepnavy);
+        color: var(---warmsand);
         cursor: pointer;
     }`;
 export default SignUp;
