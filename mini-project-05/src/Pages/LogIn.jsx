@@ -6,9 +6,13 @@ import Footer from "../components/Footer.jsx";
 const Login = () => {
     return (
         <>
-        <Navbar />
+
+
         <StyledWrapper>
-            <form className="form">
+            <div className="background">
+            <Navbar />
+            <div className='div flex mt-40 justify-center mb-20'>
+            <form className="form flex justify-center w-90" onSubmit={Login}>
                 <div className="title">Welcome,<br /><span>Login to continue</span></div>
                 <input className="input" name="email" placeholder="Email" type="email" />
                 <input className="input" name="password" placeholder="Password" type="password" />
@@ -23,8 +27,11 @@ const Login = () => {
                 </div>
                 <button className="button-confirm">Let`s go →</button>
             </form>
+            </div>
+                <Footer />
+            </div>
         </StyledWrapper>
-            <Footer />
+
         </>
     );
 }
@@ -36,14 +43,14 @@ const StyledWrapper = styled.div`
         --font-color-sub: #666;
         --bg-color: beige;
         --main-color: black;
-        ---darkblue:#0B2533;
-        ---deepnavy:#031926;
-        ---mediumteal:#468189;
-        ---softteal:#77ACA2;
-        ---mutedaqua:#9DBEBB;
-        ---warmsand:#F4E9CD;
+        --darkblue:#0B2533;
+        --deepnavy:#031926;
+        --mediumteal:#468189;
+        --softteal:#77ACA2;
+        --mutedaqua:#9DBEBB;
+        --warmsand:#F4E9CD;
         padding: 20px;
-        background: var(---deepnavy);
+        background: var(---softteal);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -52,6 +59,9 @@ const StyledWrapper = styled.div`
         border-radius: 5px;
         border: 2px solid var(---warmsand);
         box-shadow: 4px 4px var(---warmsand);
+    }
+    .background{
+        background: var(---deepnavy) ;
     }
 
     .title {
@@ -62,7 +72,7 @@ const StyledWrapper = styled.div`
     }
 
     .title span {
-        color: var(---softteal);
+        color: var(---deepnavy);
         font-weight: 600;
         font-size: 17px;
     }
@@ -71,18 +81,18 @@ const StyledWrapper = styled.div`
         width: 250px;
         height: 40px;
         border-radius: 5px;
-        border: 2px solid var(---warmsand);
+        border: 2px solid var(---deepnavy);
         background-color: var(---softteal);
-        box-shadow: 4px 4px var(---warmsand);
+        box-shadow: 4px 4px var(---deepnavy);
         font-size: 15px;
         font-weight: 600;
-        color: var(---deepnavy);
+        color: var(---warmsand);
         padding: 5px 10px;
         outline: none;
     }
 
     .input::placeholder {
-        color: var(---darkblue);
+        color: var(---deepnavy);
         opacity: 0.8;
     }
 
@@ -100,9 +110,9 @@ const StyledWrapper = styled.div`
         width: 40px;
         height: 40px;
         border-radius: 100%;
-        border: 2px solid var(---warmsand);
-        background-color: var(---deepnavy);
-        box-shadow: 4px 4px var(---warmsand);
+        border: 2px solid var(---deepnavy);
+        background-color: var(---softteal);
+        box-shadow: 4px 4px var(---deepnavy);
         color: var(---warmsand);
         font-size: 25px;
         display: flex;
@@ -126,12 +136,12 @@ const StyledWrapper = styled.div`
         width: 120px;
         height: 40px;
         border-radius: 5px;
-        border: 2px solid var(---warmsand);
-        background-color: var(---deepnavy);
-        box-shadow: 4px 4px var(---warmsand);
+        border: 2px solid var(---deepnavy);
+        background-color: var(---softteal);
+        box-shadow: 4px 4px var(---deepnavy);
         font-size: 17px;
         font-weight: 600;
-        color: var(---warmsand);
+        color: var(---deepnavy);
         cursor: pointer;
     }`;
 export default Login;
