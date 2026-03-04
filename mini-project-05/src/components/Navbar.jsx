@@ -4,17 +4,32 @@ import { IoIosClose } from "react-icons/io";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import DownloadList from "./DownloadList";
 import { RiMovie2AiLine } from "react-icons/ri";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useAuth } from "../contexts/AuthContext";
 
 
 // Navbar with wishlist and watched drawers, PDF download, and user profile dropdown
 const Navbar = ({ wishlist = [], removeMovie = () => {}, watched = [], removeWatched = () => {} }) => {
-    const navLinks = [
-        <NavLink to="../Home">Home</NavLink>,
-        <NavLink to="../LogIn">Login</NavLink>,
-        <NavLink to="../SignUp">SignUp</NavLink>,
-        <NavLink to="../Dashboard">Logout</NavLink>,
-    ];
+    const { user, logOut } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        await logOut();    // signs out from Firebase
+        navigate("/");     // send them back to the home/landing page
+    };
+
+    // Show different links depending on whether the user is logged in
+    const navLinks = user
+        ? [
+            <NavLink to="../Home">Home</NavLink>,
+            <NavLink to="../Dashboard">Dashboard</NavLink>,
+            <button onClick={handleLogout}>Logout</button>,
+          ]
+        : [
+            <NavLink to="../Home">Home</NavLink>,
+            <NavLink to="../LogIn">Login</NavLink>,
+            <NavLink to="../SignUp">SignUp</NavLink>,
+          ];
 
 
     return (
