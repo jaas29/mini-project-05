@@ -13,7 +13,7 @@ const Navbar = ({ wishlist = [], removeMovie = () => {}, watched = [], removeWat
         <NavLink to="../Home">Home</NavLink>,
         <NavLink to="../LogIn">Login</NavLink>,
         <NavLink to="../SignUp">SignUp</NavLink>,
-
+        <NavLink to="../Dashboard">Logout</NavLink>,
     ];
 
 
