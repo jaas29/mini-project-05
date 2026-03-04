@@ -7,8 +7,6 @@ import Footer from "../components/Footer.jsx";
 const SignUp = () => {
     return (
         <>
-
-
             <StyledWrapper>
                 <div className="background">
                     <Navbar />
