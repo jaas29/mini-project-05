@@ -102,7 +102,7 @@ function Home() {
       <div className="bg-[#031926] min-h-screen">
 
         {/* ── Hero Section ── */}
-        <section className="flex flex-col items-center text-center px-6 pt-16 pb-12">
+        <section className="flex flex-col items-center text-center px-6 pt-28 pb-12">
           <RiMovie2AiFill className="text-7xl md:text-9xl mb-6 text-[#77ACA2]" />
 
           <p className="text-sm font-semibold tracking-widest text-[#468189] uppercase mb-3">
