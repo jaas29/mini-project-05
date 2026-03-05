@@ -137,16 +137,16 @@ function Home() {
           {movies.length > 0 && (
             <div className="flex flex-wrap justify-center gap-3 mt-6 text-sm">
               <span className="px-4 py-1 rounded-full bg-[#0B2533] text-[#77ACA2] border border-[#468189]">
-                🎬 {movies.length} Movies
+                {movies.length} Movies
               </span>
               <span className="px-4 py-1 rounded-full bg-[#0B2533] text-[#77ACA2] border border-[#468189]">
-                🎭 {genres.length} Genres
+                {genres.length} Genres
               </span>
               <span className="px-4 py-1 rounded-full bg-[#0B2533] text-[#77ACA2] border border-[#468189]">
-                📅 {years.length} Years
+                {years.length} Years
               </span>
               <span className="px-4 py-1 rounded-full bg-[#0B2533] text-[#77ACA2] border border-[#468189]">
-                ⭐ Top rated up to {featuredMovies[0]?.imdb_rating}/10
+                Top rated up to {featuredMovies[0] ? (featuredMovies[0].imdb_rating / 2).toFixed(1) : 0}/5
               </span>
             </div>
           )}
