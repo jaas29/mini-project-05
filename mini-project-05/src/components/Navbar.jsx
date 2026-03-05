@@ -21,12 +21,9 @@ const Navbar = ({ wishlist = [], removeMovie = () => {}, watched = [], removeWat
     // Show different links depending on whether the user is logged in
     const navLinks = user
         ? [
-            <NavLink to="../Home">Home</NavLink>,
-            <NavLink to="../Dashboard">Dashboard</NavLink>,
             <button onClick={handleLogout}>Logout</button>,
           ]
         : [
-            <NavLink to="../Home">Home</NavLink>,
             <NavLink to="../LogIn">Login</NavLink>,
             <NavLink to="../SignUp">SignUp</NavLink>,
           ];
@@ -42,16 +39,26 @@ const Navbar = ({ wishlist = [], removeMovie = () => {}, watched = [], removeWat
                         <a className="btn btn-ghost text-xl"> <RiMovie2AiLine /> JAS Movies</a>
                     </div>
 
-                    <div className="flex-none">
+                    {user && (
+                        <div className="flex-1 flex justify-center gap-6">
+                            <NavLink to="/dashboard" className="btn btn-ghost text-base">Dashboard</NavLink>
+                            <NavLink to="/about" className="btn btn-ghost text-base">About Us</NavLink>
+                            <NavLink to="/watch" className="btn btn-ghost text-base">Watch</NavLink>
+                        </div>
+                    )}
+
+                    <div className={`${user ? "flex-1 flex justify-end" : "flex-none"}`}>
                         <label
-                            htmlFor="wishlist-drawer"
-                            className="btn btn-ghost btn-circle drawer-button"
+                            htmlFor={user ? "wishlist-drawer" : undefined}
+                            className={`btn btn-ghost btn-circle drawer-button ${!user ? "opacity-40 cursor-not-allowed" : ""}`}
+                            title={!user ? "Log in to use your wishlist" : "Wishlist"}
                         >
                             <FaRegHeart className='text-xl' />
                         </label>
                         <label
-                            htmlFor="watched-drawer"
-                            className="btn btn-ghost btn-circle"
+                            htmlFor={user ? "watched-drawer" : undefined}
+                            className={`btn btn-ghost btn-circle ${!user ? "opacity-40 cursor-not-allowed" : ""}`}
+                            title={!user ? "Log in to use your watched list" : "Watched"}
                         >
                                 <svg xmlns="http://www.w3.org/2000/svg" stroke='currentColor' fill="currentColor" viewBox="0 0 576 512" className="h-[1em] w-[1em] text-xl"> <path d="M572.52 241.4C518.29 135.5 407.8 64 288 64S57.71 135.5 3.48 241.4a48.07 48.07 0 0 0 0 29.2C57.71 376.5 168.2 448 288 448s230.29-71.5 284.52-177.4a48.07 48.07 0 0 0 0-29.2zM288 400a144 144 0 1 1 144-144 144 144 0 0 1-144 144zm0-240a96 96 0 1 0 96 96 96 96 0 0 0-96-96z"/> </svg>
                         </label>

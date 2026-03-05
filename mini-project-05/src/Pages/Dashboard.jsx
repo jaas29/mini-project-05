@@ -7,15 +7,18 @@ import Loader from "../components/Loader";
 import SearchBar from "../components/SearchBar";
 import MovieCard from "../components/MovieCard";
 import Pagination from "../components/Pagination";
+import { useAuth } from "../contexts/AuthContext";
 
 const Dashboard = () => {
+    const { user } = useAuth();
+    const uid = user?.uid || "guest";
     const [movies, setMovies] = useState([]);
     const [wishlist, setWishlist] = useState(() => {
-        const saved = localStorage.getItem("wishlist");
+        const saved = localStorage.getItem(`wishlist_${uid}`);
         return saved ? JSON.parse(saved) : [];
     });
     const [watched, setWatched] = useState(() => {
-        const saved = localStorage.getItem("watched");
+        const saved = localStorage.getItem(`watched_${uid}`);
         return saved ? JSON.parse(saved) : [];
     });
     const [loading, setLoading] = useState(true);
@@ -114,12 +117,12 @@ const Dashboard = () => {
 
     // Persist wishlist and watched to localStorage
     useEffect(() => {
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    }, [wishlist]);
+        localStorage.setItem(`wishlist_${uid}`, JSON.stringify(wishlist));
+    }, [wishlist, uid]);
 
     useEffect(() => {
-        localStorage.setItem("watched", JSON.stringify(watched));
-    }, [watched]);
+        localStorage.setItem(`watched_${uid}`, JSON.stringify(watched));
+    }, [watched, uid]);
 
     // Toggle wishlist
     const toggleWishlist = (movie) => {

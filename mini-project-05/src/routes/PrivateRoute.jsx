@@ -13,7 +13,7 @@ const PrivateRoute = ({ children }) => {
   }
 
   if (!user) {
-    return <Navigate to="/unauthorized" />;
+    return <Navigate to="/" />;
   }
 
   return children;

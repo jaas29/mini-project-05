@@ -11,13 +11,14 @@ import Loader from "../components/Loader";
 
 function Home() {
   const { user } = useAuth();
+  const uid = user?.uid || "guest";
   const [movies, setMovies] = useState([]);
   const [wishlist, setWishlist] = useState(() => {
-    const saved = localStorage.getItem("wishlist");
+    const saved = localStorage.getItem(`wishlist_${uid}`);
     return saved ? JSON.parse(saved) : [];
   });
   const [watched, setWatched] = useState(() => {
-    const saved = localStorage.getItem("watched");
+    const saved = localStorage.getItem(`watched_${uid}`);
     return saved ? JSON.parse(saved) : [];
   });
   const [loading, setLoading] = useState(true);
@@ -39,12 +40,12 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }, [wishlist]);
+    localStorage.setItem(`wishlist_${uid}`, JSON.stringify(wishlist));
+  }, [wishlist, uid]);
 
   useEffect(() => {
-    localStorage.setItem("watched", JSON.stringify(watched));
-  }, [watched]);
+    localStorage.setItem(`watched_${uid}`, JSON.stringify(watched));
+  }, [watched, uid]);
 
   const genres = useMemo(
     () => [...new Set(movies.map((m) => m.genre).filter(Boolean))].sort(),
