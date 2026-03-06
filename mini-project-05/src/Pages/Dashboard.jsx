@@ -10,7 +10,7 @@ import Pagination from "../components/Pagination";
 import { useAuth } from "../contexts/AuthContext";
 
 const Dashboard = () => {
-    const isLoggedIn = user !== null && user.name !== null;
+
 
 
     const { user } = useAuth();
@@ -20,6 +20,9 @@ const Dashboard = () => {
         const saved = localStorage.getItem(`wishlist_${uid}`);
         return saved ? JSON.parse(saved) : [];
     });
+    const displayName = user
+        ? user.displayName || user.email?.split("@")[0] || "User"
+        : null;
     const [watched, setWatched] = useState(() => {
         const saved = localStorage.getItem(`watched_${uid}`);
         return saved ? JSON.parse(saved) : [];
@@ -179,8 +182,8 @@ const Dashboard = () => {
                         <RiMovie2AiFill className='text-6xl md:text-8xl mb-6 mt-15 text-[#77ACA2] justify-center'  />
                     </div>
                     <div>
-                    {isLoggedIn?(
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#77ACA2] m-10">Welcome <span className="text-[#F4E9CD]"> {user.name}</span></h1>): (
+                    {displayName?(
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#77ACA2] m-10">Welcome <span className="text-[#F4E9CD]"> {displayName}!</span></h1>): (
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#77ACA2] m-10">Welcome <span className="text-[#F4E9CD]"> to JAS Movies </span></h1> )}</div>
                     <p className='text-lg md:text-xl text-[#77ACA2] max-w-3xl m-10'> Browse, search, and filter your favorite movies. Add the ones you love to your Watchlist or mark them as Already Watched. You can even download your lists as PDFs to keep track of your movie adventures!</p>
                 </div>
