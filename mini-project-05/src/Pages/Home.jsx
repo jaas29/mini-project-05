@@ -164,10 +164,6 @@ function Home() {
                 <MovieCard
                   key={movie.title}
                   movie={movie}
-                  isWishlisted={wishlist.some((m) => m.title === movie.title)}
-                  isWatched={watched.some((m) => m.title === movie.title)}
-                  onToggleWishlist={toggleWishlist}
-                  onToggleWatched={toggleWatched}
                 />
               ))}
             </div>
