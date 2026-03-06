@@ -98,6 +98,27 @@ src/
 ├── App.jsx               # Root component — state management and layout
 ├── main.jsx              # React entry point
 └── index.css             # Global styles
+│
+├───contexts
+│       AuthContext.jsx    # authentication file
+│
+├───firebase
+│       firebase.config.js  # firebase configuration file
+│
+├───layouts
+│       Root.jsx            # find root layouts here
+│
+├───Pages
+│       Dashboard.jsx       # dashboard only accessible through login or sign up
+│       Home.jsx            # homepage that everyone sees
+│       LogIn.jsx           # Login Form
+│       NotFound.jsx        # Error message page
+│       SignUp.jsx          # SignUp Form
+│       Unauthorized.jsx    # Unauthorized error code  page
+│
+└───routes
+        MainRouter.jsx      # Page that sets the routes/ paths
+        PrivateRoute.jsx    # Protects routes that require authentication.
 public/
 └── movie.json            # Movie dataset
 ```
