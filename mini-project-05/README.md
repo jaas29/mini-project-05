@@ -5,7 +5,8 @@ A movie browsing web application built with React and Vite. Browse, search, filt
 ---
 
 ## Live Link
- - 
+ - jasmoviess.netlify.app 
+
 
 ## Team Members
 
