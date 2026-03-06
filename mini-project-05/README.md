@@ -39,6 +39,34 @@ A movie browsing web application built with React and Vite. Browse, search, filt
 
 ---
 
+## System:
+1. **Authentication**
+    - Users create an account using the SignUp page.
+    - Firebase Authentication validates user credentials.
+    - After login, users can access protected routes like the Dashboard.
+
+2. **Movie Interaction**
+    - Only have access to Movie interaction through Authentication by login or signup
+    - Movies are loaded from `movie.json`.
+    - Users can search, filter, and sort movies.
+    - Users can add movies to:
+        - Watchlist
+        - Already Watched
+
+3. **State Persistence**
+    - Movie lists are stored in `localStorage`.
+    - Lists remain available after page reload or re-login.
+
+4. **Navigation System**
+    - React Router manages page navigation.
+    - If the user clicks **Login**, they are navigated to the **Login page**. 
+    - If the user clicks **Sign Up**, they are navigated to the **SignUp page**. 
+    - After successful authentication, the user is redirected to the **Dashboard**.
+    - If user clicks **log out**, the user is redirected to the **Login page**.
+    - If a user attempts to access a 'protected' page, they are redirected to the **Unauthorized page**. 
+    - without being logged in the features adding to watched and wishlist are disabled.
+    - If the user enters a route (about us page) that does not exist, the **NotFound page** is displayed.
+
 ## How It Works
 
 1. On Load the User gets send to the Home Page that shows the top rated movies and asks the User to Login or create an account to be able to save movies in watchlist or wishlist
