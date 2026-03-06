@@ -1,11 +1,11 @@
 # JAS Movies
 
-A movie browsing web application built with React and Vite. Browse, search, filter, and manage your personal movie lists — then download them as PDFs.
+A movie browsing web application built with React and Vite. Browse, search, filter, and manage your personal movie lists by logging in or signing up for an account with JAS Movies — then download them as PDFs.
 
 ---
 
 ## Live Link
- - https://jas-movies-04.vercel.app/
+ - 
 
 ## Team Members
 
@@ -28,19 +28,28 @@ A movie browsing web application built with React and Vite. Browse, search, filt
 - **Toast Notifications** — Feedback messages appear when adding/removing movies or when no results match the current filters.
 - **Loading Screen** — An animated loader is shown for at least 2 seconds while movie data is being fetched.
 - **Responsive Design** — Layout adapts from 1 to 4 columns depending on screen size.
+- **Login** - Login to an account to save movies in a wishlist or watchlist
+- **SignUp** - Signup page to create an account with our page for personalized user experience
+- **Authentication** - both SignUp and Login use an authentication application to verify a user
+- **Not Found** -  Error codes for pages that do not exist or are wrong 
+- **MainRouter** - Routes/Links to other pages 
+- **PrivateRoute** - Private Route to a page that needs to be unlocked through a login or signup authentication
+- 
 
 ---
 
 ## How It Works
 
-1. On load, the app fetches movie data from `/public/movie.json`.
+1. On Load the User gets send to the Home Page that shows the top rated movies and asks the User to Login or create an account to be able to save movies in watchlist or wishlist
+2. Login/SignUp requires the User to either fill out your data to create and account or if an account already exists to use the correct email and password to get access to your profile
+4. On load, the app fetches movie data from `/public/movie.json`.
 2. The `SearchBar` component provides a text input and four dropdowns (genre, age group, year, sort order).
 3. Filtering and sorting are computed with `useMemo` so the UI stays responsive.
 4. Each `MovieCard` shows the movie poster as a background image with a gradient overlay. Hovering reveals the short description, runtime, and budget.
 5. Clicking the heart button toggles a movie in the **Watchlist**; clicking the eye button toggles it in **Already Watched**.
 6. Both lists are accessible via the icons in the **Navbar**. Each opens a side drawer listing the saved movies with a Remove button and a Download List button.
 7. The Download button uses `@react-pdf/renderer` to generate and download a PDF with the movie title, year, genre, IMDB rating, and runtime for each entry.
-
+8. There are pages like about and watch that are unauthorized for the user or are not available which show an error code
 ---
 
 ## Getting Started
@@ -54,7 +63,7 @@ A movie browsing web application built with React and Vite. Browse, search, filt
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd mini-project-04
+cd mini-project-05
 
 # Install dependencies
 npm install
@@ -109,3 +118,4 @@ public/
 - [UIverse](https://uiverse.io/LightAndy1/tidy-pig-67)
 - [UIverse](https://uiverse.io/Uncannypotato69/ancient-hound-67)
 - [ReactPDF](https://react-pdf.org/) - help for the download pdf part
+- [Firebase](https://firebase.google.com/)- for the authentication
