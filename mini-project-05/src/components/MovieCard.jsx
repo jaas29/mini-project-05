@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaHeart, FaRegHeart, FaEye, FaRegEye } from "react-icons/fa";
 
 // Displays a single movie card with poster, rating, badges, and wishlist/watched buttons
-const MovieCard = ({ movie, isWishlisted, isWatched, onToggleWishlist, onToggleWatched }) => {
+const MovieCard = ({ movie, isWishlisted, isWatched, onToggleWishlist, onToggleWatched, isAuthenticated = true }) => {
   const [imgError, setImgError] = useState(false);
 
   const starsOut5 = (movie.imdb_rating / 2).toFixed(1);
@@ -38,20 +38,22 @@ const MovieCard = ({ movie, isWishlisted, isWatched, onToggleWishlist, onToggleW
         <div className="absolute top-0 left-0 h-full w-full bg-[#111111]" />
       )}
 
-      <div className="absolute top-3 right-3 z-[3] flex gap-2">
-        <button
-          className={`btn btn-circle btn-sm ${isWishlisted ? "btn-error" : "btn-ghost bg-black/40 hover:bg-error/80 text-white"}`}
-          onClick={(e) => { e.stopPropagation(); onToggleWishlist(movie); }}
-        >
-          {isWishlisted ? <FaHeart size={14} /> : <FaRegHeart size={14} />}
-        </button>
-        <button
-          className={`btn btn-circle btn-sm ${isWatched ? "btn-success" : "btn-ghost bg-black/40 hover:bg-success/80 text-white"}`}
-          onClick={(e) => { e.stopPropagation(); onToggleWatched(movie); }}
-        >
-          {isWatched ? <FaEye size={14} /> : <FaRegEye size={14} />}
-        </button>
-      </div>
+      {isAuthenticated && (
+        <div className="absolute top-3 right-3 z-[3] flex gap-2">
+          <button
+            className={`btn btn-circle btn-sm ${isWishlisted ? "btn-error" : "btn-ghost bg-black/40 hover:bg-error/80 text-white"}`}
+            onClick={(e) => { e.stopPropagation(); onToggleWishlist(movie); }}
+          >
+            {isWishlisted ? <FaHeart size={14} /> : <FaRegHeart size={14} />}
+          </button>
+          <button
+            className={`btn btn-circle btn-sm ${isWatched ? "btn-success" : "btn-ghost bg-black/40 hover:bg-success/80 text-white"}`}
+            onClick={(e) => { e.stopPropagation(); onToggleWatched(movie); }}
+          >
+            {isWatched ? <FaEye size={14} /> : <FaRegEye size={14} />}
+          </button>
+        </div>
+      )}
 
       <div className="container text-white z-[2] relative flex flex-col gap-[0.5em]">
         <div className="h-fit w-full">

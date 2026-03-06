@@ -164,6 +164,7 @@ function Home() {
                 <MovieCard
                   key={movie.title}
                   movie={movie}
+                  isAuthenticated={!!user}
                   isWishlisted={wishlist.some((m) => m.title === movie.title)}
                   isWatched={watched.some((m) => m.title === movie.title)}
                   onToggleWishlist={toggleWishlist}
